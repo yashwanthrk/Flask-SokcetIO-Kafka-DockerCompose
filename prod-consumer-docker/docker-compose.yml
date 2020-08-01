@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  producer:
+    build: ../producer
+    # volumes: ['../producer:/usr/app']
+    restart: always
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+
+  consumer:
+    build: ../consumer
+    ports: ['5000:5000']
+    volumes: ['../consumer:/usr/app']
+    restart: always
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      
+
+networks:
+  default:
+    external:
+      name: kafka-network
