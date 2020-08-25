@@ -1,4 +1,4 @@
-# Radar Kafka
+# Flask Kafka Python
 
 ## Horizontal scaling of websockets using KAFKA
 
